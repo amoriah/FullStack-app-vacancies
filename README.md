@@ -1,6 +1,6 @@
 # FullStack-app-vacancies
 
-FullStack приложение, платформа на которой можно создавать и откликаться на вакансии работодателей.<br>
+FullStack приложение, платформа, на которой можно создавать и откликаться на вакансии работодателей.<br>
 
 Бекенд: Node.js, Express.js, Sequelize, Postgresql, Postman.<br>
 Фронтенд: React, Redux, Style-components. 
