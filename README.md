@@ -12,23 +12,23 @@ npm i
 ```
 
 ```bash
- npm run dbr
+npm run dbr
 ```
 
 ```bash
- npm start
+npm start
 ```
 
 ```bash
- сd client
+сd client
 ```
 
 ```bash
-  npm i
+npm i
 ```
 
 ```bash
- npm start
+npm start
 ```
 
 ## Функционал
