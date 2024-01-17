@@ -14,6 +14,6 @@ router.get('/vacancies/:id', controllers.vacancyControllers.getVacancy);
 router.delete('/vacancies/:id', controllers.vacancyControllers.deleteVacancy);
 router.post('/vacancies', controllers.vacancyControllers.postVacansy);
 router.put('/vacancies/:id', controllers.vacancyControllers.putVacancy);
-router.put('/my-vacancies', controllers.userControllers.changeVacancy);
+router.put('/my-vacancies', controllers.vacancyControllers.changeVacancy);
 
 module.exports = router;
