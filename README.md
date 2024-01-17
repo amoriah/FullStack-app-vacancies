@@ -9,25 +9,10 @@ FullStack приложение, платформа, на которой можн
 
 ```bash
 npm i
-```
-
-```bash
 npm run dbr
-```
-
-```bash
 npm start
-```
-
-```bash
 сd client
-```
-
-```bash
 npm i
-```
-
-```bash
 npm start
 ```
 
