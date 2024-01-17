@@ -2,6 +2,7 @@ const db = require('../data_base/models');
 
 const Vacancy = db.vacancies;
 const Company = db.companies;
+const User = db.users;
 
 const getVacancies = async (req, res) => {
   console.log('\n[ GET VACANCIES ]\n');
@@ -95,22 +96,25 @@ const putVacancy = async (req, res) => {
   }
 };
 
-const deleteVacancy = async (req, res) => {
-  console.log('\n[ DELETE VACANCY ]\n');
-  const id = req.params.id;
+const changeVacancy = async (req, res) => {
+  console.log('\n[ PUT VACANCY ]\n');
+  const { userId, vacancyId, newResponded, newVacancies } = req.body;
   try {
-    const vacancy = await Vacancy.findOne({ where: { id } });
-    await vacancy.update({ isActive: false });
+    const user = await User.findOne({ where: { id: userId } });
+    const vacancy = await Vacancy.findOne({ where: { id: vacancyId } });
+    await user.update({ vacancies: newVacancies });
+    await vacancy.update({ responded: newResponded });
     res.status(200).send({
-      message: `Vacancy  #${id} is no longer active.`,
+      message: `The vacancies and responded arrays have been changed.`,
       success: 1,
+      vacancy: vacancy,
     });
   } catch (error) {
     res.status(500).json({
-      message: 'Failed to delete vacancy.',
+      message: 'Failed to change vacancies and responded arrays',
       success: 0,
     });
-    console.log(`\n[ DELETE VACANCY ERROR ] -> ${error}\n`);
+    console.log(`\n[ PUT VACANCY ERROR ] -> ${error}\n`);
   }
 };
 
@@ -119,5 +123,5 @@ module.exports = {
   getVacancies,
   postVacansy,
   putVacancy,
-  deleteVacancy,
+  changeVacancy,
 };
