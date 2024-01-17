@@ -64,30 +64,7 @@ const login = async (req, res) => {
   });
 };
 
-const changeVacancy = async (req, res) => {
-  console.log('\n[ PUT VACANCY ]\n');
-  const { userId, vacancyId, newResponded, newVacancies } = req.body;
-  try {
-    const user = await User.findOne({ where: { id: userId } });
-    const vacancy = await Vacancy.findOne({ where: { id: vacancyId } });
-    await user.update({ vacancies: newVacancies });
-    await vacancy.update({ responded: newResponded });
-    res.status(200).send({
-      message: `The vacancies and responded arrays have been changed.`,
-      success: 1,
-      vacancy: vacancy,
-    });
-  } catch (error) {
-    res.status(500).json({
-      message: 'Failed to change vacancies and responded arrays',
-      success: 0,
-    });
-    console.log(`\n[ PUT VACANCY ERROR ] -> ${error}\n`);
-  }
-};
-
 module.exports = {
   signup,
   login,
-  changeVacancy,
 };
