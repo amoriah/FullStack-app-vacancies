@@ -2,7 +2,7 @@
 
 FullStack приложение, платформа, на которой можно создавать и откликаться на вакансии работодателей.<br>
 
-Бекенд: Node.js, Express.js, Sequelize, Postgresql, Postman.<br>
+Бекенд: Node.js, Express.js, Sequelize, Postgresql.<br>
 Фронтенд: React, Redux, Style-components. 
 
 ## Запуск
