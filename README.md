@@ -46,6 +46,3 @@ npm start
 1. Вместо style-components использовать Ant Design.
 2. Переписать на TypeScript.
 
-## Картиночки
-
-Добавить картиночки
